@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Image{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2 class="card-title">Scan Potato Leaves</h2>
+    <p>Upload an image of potato leaves for disease detection. Our system can identify Early Blight, Late Blight, and Healthy plants.</p>
+    
+    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <div class="upload-area">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h3>Click to upload or drag and drop</h3>
+                <p>JPG, PNG, or JPEG files (Max 5MB)</p>
+                <input type="file" id="file-input" name="file" accept="image/*" style="display: none;">
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i> Analyze Image
+        </button>
+    </form>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h2 class="card-title">Tips for Best Results</h2>
+        <ul style="list-style-position: inside;">
+            <li>Take photos in good lighting conditions</li>
+            <li>Focus on leaves showing potential symptoms</li>
+            <li>Capture both upper and lower leaf surfaces</li>
+            <li>Include a scale reference if possible</li>
+            <li>Avoid blurry or shadowed images</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">What We Detect</h2>
+        <div style="margin-bottom: 1rem;">
+            <h3><span style="color: var(--warning);"><i class="fas fa-exclamation-triangle"></i> Early Blight</span></h3>
+            <p>Circular lesions with concentric rings</p>
+        </div>
+        <div style="margin-bottom: 1rem;">
+            <h3><span style="color: var(--danger);"><i class="fas fa-skull-crossbones"></i> Late Blight</span></h3>
+            <p>Water-soaked lesions that turn brown/black</p>
+        </div>
+        <div>
+            <h3><span style="color: var(--success);"><i class="fas fa-check-circle"></i> Healthy</span></h3>
+            <p>Vibrant green leaves without spots</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.querySelector('#file-input');
+        const form = document.querySelector('form');
+        
+        form.addEventListener('submit', function(e) {
+            if (!fileInput.files.length) {
+                e.preventDefault();
+                alert('Please select an image file first.');
+            }
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+<div class="card result-card">
+    {% if predicted_class == "Healthy" %}
+        <div class="result-icon healthy">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h2>Healthy Plant Detected</h2>
+    {% elif predicted_class == "Early Blight" %}
+        <div class="result-icon early-blight">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h2>Early Blight Detected</h2>
+    {% elif predicted_class == "Late Blight" %}
+        <div class="result-icon late-blight">
+            <i class="fas fa-skull-crossbones"></i>
+        </div>
+        <h2>Late Blight Detected</h2>
+    {% endif %}
+    
+    <p>Confidence: {{ confidence }}%</p>
+    
+    <div class="confidence-meter">
+        <div class="confidence-fill" data-width="{{ confidence }}" 
+             style="width: 0%; 
+             {% if predicted_class == 'Healthy' %}background-color: var(--success);
+             {% elif predicted_class == 'Early Blight' %}background-color: var(--warning);
+             {% else %}background-color: var(--danger);{% endif %}">
+        </div>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h2 class="card-title">Disease Information</h2>
+        <div class="disease-info">
+            <p><strong>Severity:</strong> {{ disease_info.severity }}</p>
+            <p><strong>Time to Rot:</strong> {{ disease_info.rot_days }}</p>
+            <p><strong>Treatment:</strong> {{ disease_info.treatment }}</p>
+            <p><strong>Prevention:</strong> {{ disease_info.prevention }}</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">Recommended Action Plan</h2>
+        <div class="timeline">
+            {% for step in timeline %}
+            <div class="timeline-item">
+                <h3>Day {{ step.day }}</h3>
+                <p>{{ step.action }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="card" style="text-align: center;">
+    <h2 class="card-title">Next Steps</h2>
+    <p>Based on this diagnosis, here's what we recommend:</p>
+    <div style="margin: 1.5rem 0;">
+        <a href="{{ url_for('treatments') }}" class="btn" style="margin: 0.5rem;">
+            <i class="fas fa-book-medical"></i> View Detailed Treatment Plans
+        </a>
+        <a href="{{ url_for('upload') }}" class="btn btn-primary" style="margin: 0.5rem;">
+            <i class="fas fa-camera"></i> Scan Another Image
+        </a>
+    </div>
+</div>
+{% endblock %}

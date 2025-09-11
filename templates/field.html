@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Field Management{% endblock %}
+
+{% block content %}
+<h1>Field Management System</h1>
+
+{% for field in fields %}
+<div class="field-card card">
+    <h2 class="card-title">{{ field.name }}</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <div>
+            <h3>Field Details</h3>
+            <p><strong>Size:</strong> {{ field.size }}</p>
+            <p><strong>Crop:</strong> {{ field.crop }}</p>
+            <p><strong>Last Scan:</strong> {{ field.last_scan }}</p>
+        </div>
+        
+        <div>
+            <h3>Health Status</h3>
+            <p><strong>{{ field.health }}% Healthy</strong></p>
+            <div class="health-bar">
+                <div class="health-progress" data-width="{{ field.health }}" style="width: 0%;"></div>
+            </div>
+        </div>
+        
+        <div>
+            <h3>Crop Rotation History</h3>
+            <ul style="list-style-position: inside;">
+                {% for crop in field.rotation %}
+                <li>{{ crop }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+    <div style="margin-top: 1.5rem;">
+        <a href="{{ url_for('upload') }}" class="btn">
+            <i class="fas fa-camera"></i> Scan This Field
+        </a>
+    </div>
+</div>
+{% endfor %}
+
+<div class="card">
+    <h2 class="card-title">Field Recommendations</h2>
+    
+    <ul style="list-style-position: inside;">
+        {% for recommendation in recommendations %}
+        <li style="margin-bottom: 0.5rem;">{{ recommendation }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="card-title">Crop Rotation Planner</h2>
+    
+    <div class="grid">
+        <div>
+            <h3>Last Season</h3>
+            <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px;">
+                <h4>Potatoes</h4>
+                <p>Planted: March 2023</p>
+                <p>Harvested: July 2023</p>
+                <p>Health: 76%</p>
+            </div>
+        </div>
+        
+        <div>
+            <h3>Current Season</h3>
+            <div style="background: #e8f4f8; padding: 1rem; border-radius: 5px;">
+                <h4>Beans</h4>
+                <p>To plant: August 2023</p>
+                <p>To harvest: November 2023</p>
+                <p>Expected benefit: Nitrogen fixation</p>
+            </div>
+        </div>
+        
+        <div>
+            <h3>Next Season</h3>
+            <div style="background: #f9f8e8; padding: 1rem; border-radius: 5px;">
+                <h4>Corn</h4>
+                <p>To plant: February 2024</p>
+                <p>To harvest: June 2024</p>
+                <p>Expected benefit: Break disease cycle</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

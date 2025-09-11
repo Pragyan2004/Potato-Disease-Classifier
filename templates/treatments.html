@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Treatment Plans{% endblock %}
+
+{% block content %}
+<h1>Treatment Plans</h1>
+
+{% for treatment in treatments %}
+<div class="card">
+    <h2 class="card-title">{{ treatment.disease }} Treatment Plan</h2>
+    
+    <h3>Action Steps</h3>
+    {% for step in treatment.steps %}
+    <div class="treatment-step">
+        <div class="step-day">Day {{ step.day }}</div>
+        <div class="step-action">{{ step.action }}</div>
+    </div>
+    {% endfor %}
+    
+    <h3>Prevention Strategies</h3>
+    <p>{{ treatment.prevention }}</p>
+</div>
+{% endfor %}
+
+<div class="card">
+    <h2 class="card-title">Organic Treatment Options</h2>
+    
+    <div class="grid">
+        <div>
+            <h3><i class="fas fa-mortar-pestle"></i> Copper Fungicides</h3>
+            <p>Organic copper-based fungicides can help control both early and late blight when applied preventatively.</p>
+        </div>
+        
+        <div>
+            <h3><i class="fas fa-spray-can"></i> Bacillus Subtilis</h3>
+            <p>This beneficial bacterium acts as a biological fungicide and is approved for organic use.</p>
+        </div>
+        
+        <div>
+            <h3><i class="fas fa-oil-can"></i> Neem Oil</h3>
+            <p>Neem oil has antifungal properties and can help prevent the spread of fungal diseases.</p>
+        </div>
+        
+        <div>
+            <h3><i class="fas fa-blender"></i> Baking Soda Spray</h3>
+            <p>A solution of baking soda and water can create an alkaline environment that inhibits fungal growth.</p>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="card-title">When to Consult an Expert</h2>
+    <p>If your plants show any of the following signs, consider consulting with an agricultural expert:</p>
+    <ul style="list-style-position: inside; margin: 1rem 0;">
+        <li>Rapid spread of disease despite treatment</li>
+        <li>More than 50% of plants infected</li>
+        <li>Unidentified symptoms that don't match common diseases</li>
+        <li>Recurring infections year after year</li>
+    </ul>
+    <a href="{{ url_for('contact') }}" class="btn">
+        <i class="fas fa-envelope"></i> Contact Our Experts
+    </a>
+</div>
+{% endblock %}

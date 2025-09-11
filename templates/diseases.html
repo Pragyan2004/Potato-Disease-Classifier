@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Disease Information{% endblock %}
+
+{% block content %}
+<h1>Potato Disease Library</h1>
+
+{% for disease in diseases %}
+<div class="disease-card card">
+    <div class="disease-header">
+        <h2>{{ disease.name }}</h2>
+        <p><em>{{ disease.scientific }}</em></p>
+    </div>
+    <div class="disease-body">
+        <h3>Symptoms</h3>
+        <p>{{ disease.symptoms }}</p>
+        
+        <h3>Progression</h3>
+        <p>{{ disease.progression }}</p>
+        
+        <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); margin: 1rem 0;">
+            <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                <div style="font-size: 2rem; color: var(--warning);">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <p>Early detection is crucial</p>
+            </div>
+            
+            <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                <div style="font-size: 2rem; color: var(--danger);">
+                    <i class="fas fa-wind"></i>
+                </div>
+                <p>Spreads quickly in wet conditions</p>
+            </div>
+            
+            <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                <div style="font-size: 2rem; color: var(--secondary);">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <p>Use resistant varieties when possible</p>
+            </div>
+        </div>
+        
+        <a href="{{ url_for('treatments') }}" class="btn">
+            <i class="fas fa-book-medical"></i> View Treatment Plans
+        </a>
+    </div>
+</div>
+{% endfor %}
+
+<div class="card">
+    <h2 class="card-title">Prevention Strategies</h2>
+    <div class="grid">
+        <div>
+            <h3><i class="fas fa-rotate"></i> Crop Rotation</h3>
+            <p>Rotate potatoes with non-host crops for at least 3 years to reduce disease carryover in soil.</p>
+        </div>
+        
+        <div>
+            <h3><i class="fas fa-ruler-combined"></i> Proper Spacing</h3>
+            <p>Ensure adequate spacing between plants to improve air circulation and reduce humidity.</p>
+        </div>
+        
+        <div>
+            <h3><i class="fas fa-shower"></i> Water Management</h3>
+            <p>Water at the base of plants early in the day to allow foliage to dry quickly.</p>
+        </div>
+        
+        <div>
+            <h3><i class="fas fa-eye"></i> Regular Monitoring</h3>
+            <p>Inspect plants weekly for early signs of disease and remove infected plants immediately.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

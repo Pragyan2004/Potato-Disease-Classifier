@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Protect Your Potato Crops with AI</h1>
+    <p>Early detection of diseases like Early Blight and Late Blight can save your harvest. Our advanced AI system helps you identify problems before they spread.</p>
+    <a href="{{ url_for('upload') }}" class="btn btn-primary">Scan Your Plants Now</a>
+</section>
+
+<div class="grid">
+    <div class="card">
+        <h2 class="card-title"><i class="fas fa-camera"></i> Instant Diagnosis</h2>
+        <p>Upload a photo of your potato leaves and get an immediate diagnosis with our advanced AI model.</p>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title"><i class="fas fa-book-medical"></i> Treatment Plans</h2>
+        <p>Get customized treatment plans based on the specific disease affecting your crops.</p>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title"><i class="fas fa-table"></i> Field Management</h2>
+        <p>Track the health of your fields over time and manage your crop rotation strategies.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="card-title">How It Works</h2>
+    <div class="grid">
+        <div style="text-align: center;">
+            <div class="step-icon" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;">
+                <i class="fas fa-camera"></i>
+            </div>
+            <h3>1. Capture</h3>
+            <p>Take a clear photo of your potato plant leaves</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <div class="step-icon" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;">
+                <i class="fas fa-upload"></i>
+            </div>
+            <h3>2. Upload</h3>
+            <p>Upload the image to our system</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <div class="step-icon" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;">
+                <i class="fas fa-brain"></i>
+            </div>
+            <h3>3. Analyze</h3>
+            <p>Our AI model analyzes the image for disease patterns</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <div class="step-icon" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;">
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+            <h3>4. Results</h3>
+            <p>Receive diagnosis and treatment recommendations</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

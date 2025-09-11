@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>About PotatoGuard</h1>
+    <p>Using AI technology to help farmers protect their crops and livelihoods</p>
+</div>
+
+<div class="card">
+    <h2 class="card-title">Our Mission</h2>
+    <p>PotatoGuard was created to address the significant challenges that potato farmers face from diseases like Early Blight and Late Blight. These diseases can destroy entire crops if not detected and treated early.</p>
+    <p>Our mission is to make advanced AI technology accessible to farmers of all scales, helping them identify problems early and take appropriate action to protect their crops.</p>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h2 class="card-title">How It Works</h2>
+        <p>Our system uses a deep learning model based on DenseNet-121 architecture, trained on thousands of images of healthy and diseased potato plants.</p>
+        <p>When you upload an image of your potato leaves, our AI model analyzes it and provides a diagnosis with a confidence score, along with recommended treatment options.</p>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">Our Technology</h2>
+        <p>We use state-of-the-art convolutional neural networks (CNNs) that have been specifically trained for potato disease detection.</p>
+        <p>The model achieves over 95% accuracy in distinguishing between Early Blight, Late Blight, and Healthy potato leaves under controlled conditions.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="card-title">The Team</h2>
+    
+    <div class="grid">
+        <div style="text-align: center;">
+            <div style="width: 120px; height: 120px; background: var(--primary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-user" style="font-size: 3rem; color: white;"></i>
+            </div>
+            <h3>Dr. Jane Smith</h3>
+            <p>Plant Pathologist</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <div style="width: 120px; height: 120px; background: var(--secondary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-user" style="font-size: 3rem; color: white;"></i>
+            </div>
+            <h3>John Doe</h3>
+            <p>AI Researcher</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <div style="width: 120px; height: 120px; background: var(--accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-user" style="font-size: 3rem; color: white;"></i>
+            </div>
+            <h3>Sarah Johnson</h3>
+            <p>Agricultural Engineer</p>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="card-title">Acknowledgments</h2>
+    <p>We gratefully acknowledge the PlantVillage dataset which was used to train our initial models, and the research community that continues to advance the field of plant disease detection using computer vision.</p>
+    <p>Our work builds upon years of research in both agriculture and artificial intelligence, and we're committed to making these advances accessible to those who need them most.</p>
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Contact Us</h1>
+    <p>Have questions or need support? We're here to help</p>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h2 class="card-title">Get In Touch</h2>
+        
+        <form>
+            <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" class="form-control" placeholder="What is this regarding?">
+            </div>
+            
+            <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" class="form-control" rows="5" placeholder="How can we help you?"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">Other Ways to Connect</h2>
+        
+        <div style="margin-bottom: 1.5rem;">
+            <h3><i class="fas fa-envelope"></i> Email</h3>
+            <p>support@potatoguard.com</p>
+        </div>
+        
+        <div style="margin-bottom: 1.5rem;">
+            <h3><i class="fas fa-phone"></i> Phone</h3>
+            <p>+91 XXX XXXX XXX</p>
+            <p>Mon-Fri, 9am-5pm (UTC+5:30)</p>
+        </div>
+        
+        <div style="margin-bottom: 1.5rem;">
+            <h3><i class="fas fa-map-marker-alt"></i> Office</h3>
+            <p>XXXXXXXXXXXXXXX</p>
+            <p>XXXXXXXXXXXXXXXXXXXX</p>
+        </div>
+        
+        <div>
+            <h3><i class="fas fa-comments"></i> Community Forum</h3>
+            <p>Join our community forum to connect with other farmers and experts.</p>
+            <a href="{{ url_for('community') }}" class="btn">Visit Forum</a>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="card-title">Frequently Asked Questions</h2>
+    
+    <div class="grid">
+        <div>
+            <h3>How accurate is the diagnosis?</h3>
+            <p>Our AI model achieves over 95% accuracy in controlled conditions. However, field conditions may vary, so we recommend confirming serious cases with an agricultural expert.</p>
+        </div>
+        
+        <div>
+            <h3>Is my data kept private?</h3>
+            <p>Yes, we take privacy seriously. Your images and data are never shared with third parties without your permission.</p>
+        </div>
+        
+        <div>
+            <h3>Can I use this for commercial farming?</h3>
+            <p>Absolutely! PotatoGuard is designed for both small-scale and commercial farmers.</p>
+        </div>
+        
+        <div>
+            <h3>What if I disagree with the diagnosis?</h3>
+            <p>You can always consult with our experts or submit additional images for a second opinion.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

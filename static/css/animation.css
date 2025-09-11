@@ -1,0 +1,179 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.8s ease forwards;
+}
+
+.animate-slide-in-up {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+.animate-card-1 {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.animate-card-2 {
+    animation: slideInUp 0.8s ease 0.2s forwards;
+}
+
+.animate-card-3 {
+    animation: slideInUp 0.8s ease 0.4s forwards;
+}
+
+.animate-card-4 {
+    animation: slideInUp 0.8s ease 0.6s forwards;
+}
+
+.animate-step-1 {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.animate-step-2 {
+    animation: slideInUp 0.8s ease 0.2s forwards;
+}
+
+.animate-step-3 {
+    animation: slideInUp 0.8s ease 0.4s forwards;
+}
+
+.animate-step-4 {
+    animation: slideInUp 0.8s ease 0.6s forwards;
+}
+
+.animate-team-1 {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.animate-team-2 {
+    animation: slideInUp 0.8s ease 0.2s forwards;
+}
+
+.animate-team-3 {
+    animation: slideInUp 0.8s ease 0.4s forwards;
+}
+
+.animate-team-4 {
+    animation: slideInUp 0.8s ease 0.6s forwards;
+}
+
+.animate-stat-1 {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.animate-stat-2 {
+    animation: slideInUp 0.8s ease 0.2s forwards;
+}
+
+.animate-stat-3 {
+    animation: slideInUp 0.8s ease 0.4s forwards;
+}
+
+.animate-sample-1 {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.animate-sample-2 {
+    animation: slideInUp 0.8s ease 0.2s forwards;
+}
+
+.animate-sample-3 {
+    animation: slideInUp 0.8s ease 0.4s forwards;
+}
+
+.animate-faq-1 {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.animate-faq-2 {
+    animation: slideInUp 0.8s ease 0.2s forwards;
+}
+
+.animate-faq-3 {
+    animation: slideInUp 0.8s ease 0.4s forwards;
+}
+
+.animate-faq-4 {
+    animation: slideInUp 0.8s ease 0.6s forwards;
+}
+
+.animate-timeline-1 {
+    animation: slideInRight 0.8s ease forwards;
+}
+
+.animate-timeline-2 {
+    animation: slideInRight 0.8s ease 0.2s forwards;
+}
+
+.animate-timeline-3 {
+    animation: slideInRight 0.8s ease 0.4s forwards;
+}
+
+.animate-timeline-4 {
+    animation: slideInRight 0.8s ease 0.6s forwards;
+}

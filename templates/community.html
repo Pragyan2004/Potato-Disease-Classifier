@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Community Forum{% endblock %}
+
+{% block content %}
+<h1>Community Forum</h1>
+
+<div class="card">
+    <h2 class="card-title">Discussion Topics</h2>
+    
+    {% for topic in topics %}
+    <div class="topic-card">
+        <h3>{{ topic.title }}</h3>
+        <p>By {{ topic.author }} on {{ topic.date }} • {{ topic.replies }} replies</p>
+        
+        <div class="topic-tags">
+            {% for tag in topic.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        
+        <a href="#" class="btn" style="margin-top: 0.5rem;">
+            <i class="fas fa-comment"></i> Join Discussion
+        </a>
+    </div>
+    {% endfor %}
+    
+    <div style="margin-top: 1.5rem; text-align: center;">
+        <a href="#" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Start New Topic
+        </a>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h2 class="card-title">Expert Answers</h2>
+        
+        <div style="margin-bottom: 1.5rem;">
+            <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 0.5rem;">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div>
+                    <strong>Dr. Plant Expert</strong>
+                    <p>Agricultural Scientist</p>
+                </div>
+            </div>
+            <p>"Early detection is key to managing potato diseases. Regular field monitoring can save your entire crop."</p>
+        </div>
+        
+        <div>
+            <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                <div style="width: 40px; height: 40px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 0.5rem;">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div>
+                    <strong>Prof. Crop Health</strong>
+                    <p>Plant Pathologist</p>
+                </div>
+            </div>
+            <p>"Consider resistant varieties if you're in an area with frequent late blight outbreaks."</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2 class="card-title">Recent Resources</h2>
+        
+        <div style="margin-bottom: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+            <h3><i class="fas fa-book"></i> Organic Treatment Guide</h3>
+            <p>Download our comprehensive guide to organic treatment options for potato diseases.</p>
+            <a href="#" class="btn">Download</a>
+        </div>
+        
+        <div style="padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+            <h3><i class="fas fa-calendar"></i> Seasonal Planning Webinar</h3>
+            <p>Join our free webinar on planning your planting season to minimize disease risk.</p>
+            <a href="#" class="btn">Register Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
