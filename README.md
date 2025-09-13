@@ -95,3 +95,13 @@ Train with appropriate hyperparameters
 Save as densenet121_best.pth
 
 # ScreenShoots
+
+<img width="761" height="925" alt="Screenshot 2025-09-13 154432" src="https://github.com/user-attachments/assets/5f274689-592f-4b39-ac48-21269bf93e72" />
+<img width="770" height="873" alt="Screenshot 2025-09-13 154421" src="https://github.com/user-attachments/assets/e4e0a5b5-187e-4dcb-b497-b5fd71d47f5e" />
+<img width="765" height="924" alt="Screenshot 2025-09-13 154410" src="https://github.com/user-attachments/assets/7a7c075c-d803-4275-86c5-69fcd96722cb" />
+<img width="809" height="848" alt="Screenshot 2025-09-13 154356" src="https://github.com/user-attachments/assets/e8512344-a2b3-4988-8be6-dab24b99972a" />
+<img width="779" height="920" alt="Screenshot 2025-09-13 154346" src="https://github.com/user-attachments/assets/1799fe1b-750f-44ac-addc-ae1baf913191" />
+<img width="776" height="760" alt="Screenshot 2025-09-13 154332" src="https://github.com/user-attachments/assets/42b278bb-1725-4044-abfe-12789ae89c80" />
+<img width="781" height="624" alt="Screenshot 2025-09-13 154320" src="https://github.com/user-attachments/assets/540b5667-189e-461d-be0d-adad7112a63a" />
+<img width="755" height="849" alt="Screenshot 2025-09-13 154235" src="https://github.com/user-attachments/assets/00906692-1523-481e-aad2-267ed32cb255" />
+
