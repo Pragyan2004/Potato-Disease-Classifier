@@ -48,7 +48,7 @@ The system can identify **Early Blight**, **Late Blight**, and **Healthy potato 
 
 **Clone the repository:**
    
-   git clone <repository-url>
+   git clone https://github.com/Pragyan2004/Potato-Disease-Classifier.git
    cd potato-disease-classifier
 
 
@@ -104,4 +104,5 @@ Save as densenet121_best.pth
 <img width="776" height="760" alt="Screenshot 2025-09-13 154332" src="https://github.com/user-attachments/assets/42b278bb-1725-4044-abfe-12789ae89c80" />
 <img width="781" height="624" alt="Screenshot 2025-09-13 154320" src="https://github.com/user-attachments/assets/540b5667-189e-461d-be0d-adad7112a63a" />
 <img width="755" height="849" alt="Screenshot 2025-09-13 154235" src="https://github.com/user-attachments/assets/00906692-1523-481e-aad2-267ed32cb255" />
+
 
